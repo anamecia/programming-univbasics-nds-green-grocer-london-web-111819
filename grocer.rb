@@ -85,12 +85,20 @@ def checkout(cart, coupons)
   # This method should call
   # * consolidate_cart
   consolidate_cart(cart)
-  
+    # * apply_coupons
   apply_coupons( consolidate_cart(cart),coupons)
-  # * apply_coupons
   # * apply_clearance
+  apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
   #
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
+  total = 0 
+  i = 0 
+  while i < cart.length do 
+    price_per_type = cart[i][:price]*cart[i][:count]
+    total += price_per_type
+    i += 1
+  end
+  
   
 end
