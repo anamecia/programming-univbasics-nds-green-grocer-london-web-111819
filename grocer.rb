@@ -97,8 +97,10 @@ def checkout(cart, coupons)
   while i < cart.length do 
     price_per_type = cart[i][:price]*cart[i][:count]
     total += price_per_type
-    i += 1
+    i += 1 
   end
-  
+  if total > 100
+    with_discount = total * 0.9
+    
   
 end
