@@ -85,6 +85,7 @@ def checkout(cart, coupons)
   # This method should call
   # * consolidate_cart
   consolidate_cart(cart)
+  
   apply_coupons( consolidate_cart(cart),coupons)
   # * apply_coupons
   # * apply_clearance
