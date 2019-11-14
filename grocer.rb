@@ -56,6 +56,7 @@ def apply_coupons(cart, coupons)
     
     if used_coupons.include?(item_name) 
       next
+    end
     used_coupons << item_name
     while n < cart.length do
      if cart[n][:item] == item_name
