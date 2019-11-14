@@ -48,14 +48,21 @@ def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-  i = 0 
+  
+  used_coupons =[]
   while i < coupons.length do
     n = 0
     item_name = coupons[i][:item]
+    
+    if used_coupons.include?(item_name) 
+      
+    used_coupons << item_name
+    
     while n < cart.length do
      if cart[n][:item] == item_name
       cart[n][:count] -= coupons[i][:num]
       cart << {:item => "#{cart[n][:item]} W/COUPON", :price => coupons[i][:cost]/coupons[i][:num],:clearance => cart[n][:clearance], :count => coupons[i][:num]}
+      
      end
      n += 1
     end
