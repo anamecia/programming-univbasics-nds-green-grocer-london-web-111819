@@ -11,16 +11,7 @@ def find_item_by_name_in_collection(name, collection)
     end
     i += 1
   end
-end
-
-def find_index_by_name_in_collection(name, collection)
-  i = 0
-  while i < collection.length do 
-    if collection[i][:item] == name
-      return i
-    end
-    i += 1
-  end
+  nil
 end
 
 def consolidate_cart(cart)
@@ -32,13 +23,13 @@ def consolidate_cart(cart)
   i = 0
   while i < cart.length do
      item_name = cart[i][:item]
-          
-    item_in_cart = find_index_by_name_in_collection(item_name)
-    if item_in_cart:
-      final_cart << {item_in_cart}
-    else
-      index = find_index_by_name_in_collection(item_name, final_cart)
-      final_cart[index][:count] += 1
+     item_price = cart[i][:price]
+     item_clearance = cart[i][:clearance]
+
+    if final_cart.length == 0
+      final_cart = [{:item => item_name, :price => item_price, :clearance => item_clearance, :count => 1}]
+    elsif find_item_by_name_in_collection(item_name, final_cart)
+      
     end
     i += 1
   end
