@@ -56,7 +56,7 @@ def apply_coupons(cart, coupons)
     while n < cart.length do
      if cart[n][:item] == item_name
        if cart[n][:count]==coupons[i][:num]
-         cart[n][:item]= "#{cart[n][:item]} W/COUPON"
+         cart[n][:item]= "#{cart[n][:item]}"
          cart[n][:price] = coupons[i][:cost]/coupons[i][:num] 
        elsif cart[n][:count] > coupons[i][:num]
          cart[n][:count] -= coupons[i][:num]
