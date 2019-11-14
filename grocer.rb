@@ -54,7 +54,7 @@ def apply_coupons(cart, coupons)
     n = 0
     item_name = coupons[i][:item]
     if used_coupons.include?(item_name) 
-      n += 1
+      i += 1
       next
     end
     used_coupons << item_name
