@@ -84,11 +84,9 @@ def checkout(cart, coupons)
   #
   # This method should call
   # * consolidate_cart
-  consolidate_cart(cart)
     # * apply_coupons
-  apply_coupons( consolidate_cart(cart),coupons)
   # * apply_clearance
-  apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
+  cart = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
   #
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
