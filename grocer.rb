@@ -29,7 +29,14 @@ def consolidate_cart(cart)
     if final_cart.length == 0
       final_cart = [{:item => item_name, :price => item_price, :clearance => item_clearance, :count => 1}]
     elsif find_item_by_name_in_collection(item_name, final_cart)
-      
+      ii = 0
+      while ii < final_cart.length do
+          if final_cart[ii][:item] == item_name
+            final_cart[ii][:count] += 1
+          end
+      end
+    else
+      final_cart = [{:item => item_name, :price => item_price, :clearance => item_clearance, :count => 1}]
     end
     i += 1
   end
