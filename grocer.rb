@@ -54,10 +54,9 @@ def apply_coupons(cart, coupons)
     item_name = coupons[i][:item]
     
     while n < cart.length do
-     if cart[n][item_name]
-       cart << {:item => "#{item_name} w/COUPON", :price => coupons[i]}
+     if cart[n][:name] == item_name
+       if cart[n][]
        
-       cart << coupons[i]
      end
      n += 1
     end
