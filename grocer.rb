@@ -13,6 +13,16 @@ def find_item_by_name_in_collection(name, collection)
   end
 end
 
+def find_index_by_name_in_collection(name, collection)
+  i = 0
+  while i < collection.length do 
+    if collection[i][:item] == name
+      return i
+    end
+    i += 1
+  end
+end
+
 def consolidate_cart(cart)
   # Consult README for inputs and outputs
   #
@@ -21,9 +31,8 @@ def consolidate_cart(cart)
   final_cart=[]
   i = 0
   while i < cart.length do
-    if final_cartcart[i][:item]
-    
-    
+     item_name = cart[i][:item]
+          
     item_in_cart = find_index_by_name_in_collection(item_name)
     if item_in_cart:
       final_cart << {item_in_cart}
