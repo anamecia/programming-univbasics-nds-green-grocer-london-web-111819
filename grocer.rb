@@ -37,7 +37,7 @@ def consolidate_cart(cart)
           ii += 1
       end
     else
-      final_cart = [{:item => item_name, :price => item_price, :clearance => item_clearance, :count => 1}]
+      final_cart << {:item => item_name, :price => item_price, :clearance => item_clearance, :count => 1}
     end
     i += 1
   end
