@@ -23,6 +23,7 @@ def consolidate_cart(cart)
   while i < cart.length do
     item_name = cart[i][:item]
     
+    
     item_in_cart = find_index_by_name_in_collection(item_name)
     if item_in_cart:
       final_cart << {item_in_cart}
