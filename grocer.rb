@@ -55,9 +55,8 @@ def apply_coupons(cart, coupons)
     item_name = coupons[i][:item]
     
     if used_coupons.include?(item_name) 
-      
+      next
     used_coupons << item_name
-    
     while n < cart.length do
      if cart[n][:item] == item_name
       cart[n][:count] -= coupons[i][:num]
